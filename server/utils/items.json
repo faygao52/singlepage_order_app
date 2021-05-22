@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name": "Chicken Burger",
+        "img": "https://assets.grilld.com.au/images/Products/Burgers/Chicken-Burgers/_crop185/CHICKEN_BirdAndBrie_Trad_1500x1200px.jpg?mtime=20210429162929",
+        "price": 15.99,
+        "categoryId": 1
+    },
+    {
+        "id": 2,
+        "name": "Vegan Burger",
+        "img": "https://assets.grilld.com.au/images/Products/Burgers/Plant-Based-Burgers/_crop185/BEYOND_BeyondVeganCheeseburger_Trad_1500x1200px.jpg?mtime=20210430145337",
+        "price": 11.99,
+        "categoryId": 1
+    },
+    {
+        "id": 3,
+        "name": "Beef Burger",
+        "img": "https://assets.grilld.com.au/images/Products/Burgers/Beef-Burgers/_crop185/BEEF_SimplyGrilld_Trad_1500x1200px.jpg?mtime=20210430113448",
+        "price": 12,
+        "categoryId": 1
+    },
+    {
+        "id": 4,
+        "name": "Lamb Burger",
+        "img": "https://assets.grilld.com.au/images/Products/Burgers/Lamb-Burgers/_crop185/LAMB_BaaBaa_Trad_1500x1200px.jpg?mtime=20210430142401",
+        "price": 12,
+        "categoryId": 1
+    },
+    {
+        "id": 5,
+        "name": "Small Fries",
+        "img": "https://assets.grilld.com.au/images/Products/Chips/_crop185/CHIPS_FamousChips_Snack_1500x1200px.jpg?mtime=20210512152641",
+        "price": 21,
+        "categoryId": 2
+    },
+    {
+        "id": 6,
+        "name": "Large Fries",
+        "img": "https://assets.grilld.com.au/images/Products/Chips/_crop185/CHIPS_FamousChips_Regular_1500x1200px.jpg?mtime=20210512152611",
+        "price": 12,
+        "categoryId": 2
+    },
+    {
+        "id": 7,
+        "name": "Pepsi Max",
+        "img": "https://assets.grilld.com.au/images/Products/Drinks/_crop185/0009_Pepsi-Max-600ml-900x900px.jpg?mtime=20180626190115",
+        "price": 4,
+        "categoryId": 3
+    }
+]
