@@ -4,9 +4,12 @@
   "description": "",
   "main": "./electron/index.js",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"cd app && npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "start": "concurrently \"npm run server\" \"npm run react\" \"wait-on http://localhost:3000 && electron .\"",
     "server": "node server/src/server.js",
-    "server:test": "source server/.test.env && mocha server/__test__/**/*.js"
+    "server:test": "source server/.test.env && mocha server/__test__/**/*.js",
+    "react": "cd app && npm start",
+    "react:test": "cd app && npm test a",
+    "test": "concurrently \"npm run server:test\" \"npm run react:test\""
   },
   "repository": {
     "type": "git",
