@@ -21,7 +21,7 @@ React app live in `app` folder
 
 Electron configruation live in `electron`
 
-Output file can be found under root folder
+Output file can be found under root folder with name `output.json`, you can change name and path by seting environment variable `OUTPUT_PATH`
 
 ## Usage
 
