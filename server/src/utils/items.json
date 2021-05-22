@@ -17,7 +17,7 @@
         "id": 3,
         "name": "Beef Burger",
         "img": "https://assets.grilld.com.au/images/Products/Burgers/Beef-Burgers/_crop185/BEEF_SimplyGrilld_Trad_1500x1200px.jpg?mtime=20210430113448",
-        "price": 12,
+        "price": 11,
         "categoryId": 1
     },
     {
@@ -31,7 +31,7 @@
         "id": 5,
         "name": "Small Fries",
         "img": "https://assets.grilld.com.au/images/Products/Chips/_crop185/CHIPS_FamousChips_Snack_1500x1200px.jpg?mtime=20210512152641",
-        "price": 21,
+        "price": 7,
         "categoryId": 2
     },
     {

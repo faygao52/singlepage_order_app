@@ -1,0 +1,44 @@
+.Order {
+    display: grid;
+    grid-area: order;
+    height: 100vh;
+    grid-template-rows: 60px auto 40px 60px;
+}
+
+.OrderedItemsWrapper {
+    padding: 10px;
+    overflow-y: scroll;    
+}
+
+.OrderedItem {
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.QualityBtn {
+    background: none;
+    cursor: pointer;
+    border: none;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.Payment {
+    border-top: 1px solid #e4e3de;
+    padding: 10px;
+    display: flex;
+    font-size: 16px;
+    justify-content: space-between;
+}
+
+.PayBtn {
+    cursor: pointer;
+    height: 60px;
+    background-color: green;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    border: none;
+}

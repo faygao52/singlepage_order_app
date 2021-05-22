@@ -1,0 +1,32 @@
+.Products {
+    grid-area: products;
+    height: 100vh;
+    overflow-y: scroll;
+    border-right: 1px solid #e4e3de;
+}
+.Category {
+    padding: 0 20px;
+}
+.CategoryName {
+    border-bottom: 1px solid #e4e3de;
+    padding: 20px 0;
+}
+
+.ItemWrapper {
+    display: grid;
+    justify-content: space-between;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, 185px);
+    column-gap: 10px;
+    row-gap: 20px;
+}
+
+.ProductCard {
+    border: 1px solid #e4e3de;
+    text-align: center;
+    cursor: pointer;
+}
+
+.ProductName {
+    padding: 5px 0;
+}

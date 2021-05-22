@@ -6,7 +6,7 @@ const express = require('express')
 const fs = require('fs')
 
 const router = express.Router()
-const OUTPUT_FILE = process.env.OUTPUT_PATH || '../payment.json'
+const OUTPUT_FILE = process.env.OUTPUT_PATH || './output.json'
 
 /**
  * Get the payment detail from request body and write to output file
