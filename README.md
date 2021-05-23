@@ -96,8 +96,14 @@ Request body:
 
 ```javascript
 {
-  "items" : object[],
-  "totalAmount" : price
+  "items" : [
+      {
+          "id": number,
+          "quantity": number,
+          "total": number
+      }
+  ],
+  "totalAmount" : number
 }
 ```
 
