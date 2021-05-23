@@ -58,11 +58,12 @@ const Orders = ({ orderedItems, updateOrderedItem }) => {
                     item={item} 
                     updateOrderedItem={updateOrderedItem} />)}
             </div>
+            {hasError && <div>Sorry, payment is not processed.</div>}
             <div className="Payment">
                 <div>Total</div>
                 <div>${totalAmount ? totalAmount : 0}</div>
             </div>
-            <button className="PayBtn" onClick={placeOrder}>Pay</button>
+            <button className="PayBtn" onClick={placeOrder} disabled={loading}>Pay</button>
         </div>
     )
 }
