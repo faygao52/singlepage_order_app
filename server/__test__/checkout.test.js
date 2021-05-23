@@ -11,8 +11,19 @@ describe('Checkout', () => {
 
         it('should write request into output file', (done) => {
             let request = {
-                itemIds: [ 1, 6 ],
-                totalAmount: 17.99
+                items: [
+                    {
+                        id: 1,
+                        quantity: 2,
+                        total: 24
+                    },
+                    {
+                        id: 2,
+                        quantity:1,
+                        total: 7
+                    }
+                ],
+                totalAmount: 31
             }
             chai.request(server)
                 .post('/checkout')

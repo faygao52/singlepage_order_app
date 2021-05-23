@@ -13,7 +13,7 @@ const Orders = ({ orderedItems, updateOrderedItem }) => {
     const calculateTotalAmount = () => {
         let total = 0
         orderedItems.forEach(order => {
-            total += order.count * order.price
+            total += order.quantity * order.price
         })
         setTotalAmount(total.toFixed(2))
     }
@@ -27,10 +27,14 @@ const Orders = ({ orderedItems, updateOrderedItem }) => {
     const placeOrder = () => {
         setLoading(true)
         const payload = {
-            itemIds: orderedItems.map(order => order.id),
+            items: orderedItems.map(order => (
+                { 
+                    id: order.id, 
+                    quantity: order.quantity, 
+                    total: (order.price * order.quantity).toFixed(2)
+                })),
             totalAmount
         }
-        console.log('payload', payload)
         fetch('/checkout', {
             method: 'POST',
             headers: {

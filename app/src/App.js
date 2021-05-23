@@ -19,10 +19,10 @@ const App = (props) => {
     const addToOrder = (item) => {
         let ordered = orders.find(order => order.id === item.id)
         if (ordered) {
-            ordered.count++
+            ordered.quantity++
         } else {
             ordered = {
-                count: 1,
+                quantity: 1,
                 ...item
             }
             orders.push(ordered)
@@ -34,15 +34,15 @@ const App = (props) => {
      * Hanlde number of item changed
      * 
      * @param {number} itemId - identifier of item
-     * @param {number} count - updated count
+     * @param {number} quantity - updated quantity
      */
-    const updateOrderedItem = (itemId, count) => {
+    const updateOrderedItem = (itemId, quantity) => {
         // remove item from order
-        if (!count) {
+        if (!quantity) {
             setOrders(orders.filter(item => item.id !== itemId))
         } else {
             let ordered = orders.find(order => order.id === itemId)
-            ordered.count = count
+            ordered.quantity = quantity
             setOrders([...orders])
         }
     }
@@ -66,7 +66,7 @@ const App = (props) => {
     }
 
     useEffect(retrieveCategories, [])
-    
+
     if (loading) return (<span> Loading... </span>)
     if (hasError) return (<span>Error: {hasError}</span>)
     return (
