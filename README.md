@@ -39,3 +39,85 @@ Run Front End test `npm run react:test"`
 
 If you want to change categories and items, you could find JSON file in under `server/utils`
 
+
+## APIs
+
+### GET /categories
+
+Retrieve all categories
+
+Response body:
+
+```javascript
+{
+  "id" : number,
+  "name" : string
+}
+```
+
+Example:
+
+```javascript
+{
+  "id" : 1,
+  "name" : "Burger"
+}
+```
+
+### GET /categories/:id/items
+
+Retreive all items in category
+
+```javascript
+{
+  "id" : number,
+  "name" : string,
+  "img": string,
+  "price": number,
+  "categoryId": number
+}
+```
+
+Example:
+
+```javascript
+{
+    "id": 1,
+    "name": "Chicken Burger",
+    "img": "https://assets.grilld.com.au/images/Products/Burgers/Chicken-Burgers/_crop185/CHICKEN_BirdAndBrie_Trad_1500x1200px.jpg?mtime=20210429162929",
+    "price": 15.99,
+    "categoryId": 1
+}
+```
+
+### POST /checkout
+
+Request body:
+
+```javascript
+{
+  "items" : object[],
+  "totalAmount" : price
+}
+```
+
+Example:
+
+
+```javascript
+{
+    "item": [
+        {
+            "id": 1,
+            "quantity": 2,
+            "total": 24
+        },
+        {
+            "id": 2,
+            "quantity":1,
+            "total": 7
+        }
+    ],
+    "totalAmount": 31
+}
+```
