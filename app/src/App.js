@@ -65,6 +65,13 @@ const App = (props) => {
             .catch(setHasError)
     }
 
+    /**
+     * Reset orders
+     */
+    const cleanOrders = () => {
+        setOrders([])
+    }
+
     useEffect(retrieveCategories, [])
 
     if (loading) return (<span> Loading... </span>)
@@ -74,6 +81,7 @@ const App = (props) => {
             <Products categories={categories} addToOrder={addToOrder}/>
             <Orders 
                 orderedItems={orders} 
+                cleanOrders={cleanOrders}
                 updateOrderedItem={updateOrderedItem}
             />
         </div>

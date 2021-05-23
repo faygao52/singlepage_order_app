@@ -8,7 +8,7 @@ const server = setupServer(
         return res(ctx.json([ { name: 'Product', id: 1 }]))
     }),
     rest.get('/categories/1/items', (req, res, ctx) => {
-        return res(ctx.json([]))
+        return res(ctx.json([{ name: 'Playstation 5', price: '749', id: 2 } ]))
     })
 )
 
@@ -52,7 +52,6 @@ test('should display error message if item is not loaded', async () => {
     server.use(
         rest.get('/categories/1/items', (req, res, ctx) => {
             return res(ctx.status(500))
-            // return res(ctx.json([{ name: 'Playstation 5', price: '749' }]))
         })
     )    
     render(<App />)
@@ -104,4 +103,36 @@ test('should calculate total when select mutiple items ', async () => {
     fireEvent.click(screen.getByText(/XBox Series X/i))
     expect(document.querySelector('.OrderedItemsWrapper').children.length).toEqual(2)
     expect(screen.getByText(/1608.00/i)).toBeInTheDocument()
+})
+
+test('should show error message when payment is failed', async () => {
+    server.use(
+        rest.post('/checkout', (req, res, ctx) => {
+            return res(ctx.status(500))
+        })
+    )    
+    render(<App />)
+    await waitForElementToBeRemoved(() => screen.getByText('Loading...'))
+    await waitForElementToBeRemoved(() => screen.getByText('Loading items...'))
+    fireEvent.click(screen.getByText(/Playstation 5/i))
+    fireEvent.click(screen.getByText(/Pay/i))
+    setTimeout(() => {
+        expect(screen.getByText(/Sorry, payment is not processed/i)).toBeInTheDocument()
+    }, 2000);
+})
+
+test('should show clear order section when payment go through', async () => {
+    server.use(
+        rest.post('/checkout', (req, res, ctx) => {
+            return res(ctx.status(200))
+        })
+    )    
+    render(<App />)
+    await waitForElementToBeRemoved(() => screen.getByText('Loading...'))
+    await waitForElementToBeRemoved(() => screen.getByText('Loading items...'))
+    fireEvent.click(screen.getByText(/Playstation 5/i))
+    fireEvent.click(screen.getByText(/Pay/i))
+    setTimeout(() => {
+        expect(screen.getByText(/0.00/i)).toBeInTheDocument()
+    }, 2000);
 })

@@ -2,7 +2,7 @@ import '../styles/Orders.css'
 import { useState, useEffect } from 'react'
 import OrderedItem from './OrderedItem'
 
-const Orders = ({ orderedItems, updateOrderedItem }) => {
+const Orders = ({ orderedItems, updateOrderedItem, cleanOrders }) => {
     const [ totalAmount, setTotalAmount ] = useState(0)
     const [ hasError, setHasError ] = useState(false)
     const [ loading, setLoading ] = useState(false)
@@ -44,6 +44,7 @@ const Orders = ({ orderedItems, updateOrderedItem }) => {
             body: JSON.stringify(payload)
         })
         .then((res) => {
+            cleanOrders()
             setLoading(false)
         })
         .catch(setHasError)
@@ -63,7 +64,7 @@ const Orders = ({ orderedItems, updateOrderedItem }) => {
                 <div>Total</div>
                 <div>${totalAmount ? totalAmount : 0}</div>
             </div>
-            <button className="PayBtn" onClick={placeOrder} disabled={loading}>Pay</button>
+            <button className="PayBtn" onClick={placeOrder} disabled={loading || totalAmount === 0}>Pay</button>
         </div>
     )
 }
