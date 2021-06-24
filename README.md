@@ -1,6 +1,6 @@
-# MX51 Integration APP
+# Single page order APP
 
-This repo contains backend and React App for MX51 integration interview
+This repo contains backend and React App for a single order page
 
 ## Get Started
 
